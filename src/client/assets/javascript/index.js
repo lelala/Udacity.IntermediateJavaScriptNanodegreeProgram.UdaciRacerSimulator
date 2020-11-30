@@ -205,7 +205,8 @@ function handleAccelerate() {
 	console.log("accelerate button clicked")
 	// TODO - Invoke the API call to accelerate
 	if (store.race_started)
-		accelerate(store.race_id);
+		for (let i = 0; i < 100; i++)//I think this line is the most important...
+			accelerate(store.race_id);
 }
 
 // HTML VIEWS ------------------------------------------------
