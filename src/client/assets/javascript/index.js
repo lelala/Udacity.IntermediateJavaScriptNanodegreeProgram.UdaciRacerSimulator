@@ -132,6 +132,7 @@ function runRace(raceID) {
 					TO.DO - if the race info status property is "finished", run the following:
 			
 				*/
+				store.race_started = false;
 				window.clearInterval(raceInterval) // to stop the interval from repeating
 				renderAt('#race', resultsView(res.positions)) // to render the results view
 				resolve(res) // resolve the promise
@@ -204,8 +205,8 @@ function handleAccelerate() {
 	console.log("handleAccelerate");
 	console.log("accelerate button clicked")
 	// TODO - Invoke the API call to accelerate
-	if (store.race_started)
-		for (let i = 0; i < 100; i++)//I think this line is the most important...
+	for (let i = 0; i < 100; i++)//I think this line is the most important...
+		if (store.race_started)
 			accelerate(store.race_id);
 }
 
